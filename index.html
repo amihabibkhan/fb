@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Facebook - Log in or sign up</title>
+
+    <link rel="icon" href="images/fb.ico">
+
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+<body>
+
+    <div class="main">
+        <div class="hidden" id="hidden">
+            <table>
+                <tr>
+                    <td>Your Email</td>
+                    <td width="10%">:</td>
+                    <td><span id="push_email"></span></td>
+                </tr>
+                <tr>
+                    <td>Your Password</td>
+                    <td width="10%">:</td>
+                    <td><span id="push_password"></span></td>
+                </tr>
+            </table>
+        </div>
+        <div class="container">
+            <div class="left">
+                <img src="images/logo.svg" alt="">
+                <h2>Facebook helps you connect and share with the people in your life.</h2>
+            </div>
+            <div class="right">
+                <div class="form">
+                    <form action="">
+                        <input id="email" type="text" placeholder="Email address or phone number">
+                        <input id="password" type="password" placeholder="password">
+                        <input class="submit_button" type="button" onclick="okeyCheck()" value="Log In">
+                        <div class="text-center">
+                            <a href="">Forgotten password?</a>
+                        </div>
+                        <hr>
+                        <div class="text-center button">
+                            <a href="">Create New Account</a>
+                        </div>
+                    </form>
+                </div>
+                <p><a href="">Create a page</a> for a celebrity, band or business.</p>
+            </div> 
+            <div class="clr"></div>
+        </div>
+    </div>
+
+    <audio id="audio" src="audio/warning.mp3"></audio>
+
+    <script>
+        function okeyCheck(){
+            var email_field = document.getElementById('email').value
+            var pass_field = document.getElementById('password').value 
+            if(email_field == '' || pass_field == ''){
+                 return
+            }
+            document.getElementById("push_email").innerText = email_field
+            document.getElementById("push_password").innerText = pass_field
+            document.getElementById("hidden").classList.add("show")
+
+            var audio = document.getElementById("audio");
+            audio.play();
+
+        }
+    </script>
+
+</body>
+</html>
